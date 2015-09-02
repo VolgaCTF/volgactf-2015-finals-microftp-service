@@ -1,0 +1,51 @@
+﻿Build started 8/10/2015 12:42:52 PM.
+     1>Project "F:\Konstantce\Projects\VolgaCTF2015Finals\VolgaCTF2015Finals\VolgaCTF2015Finals.vcxproj" on node 2 (Build target(s)).
+     1>Build:
+         "F:\VisualGDB\\VisualGDB.exe" /build "F:\Konstantce\Projects\VolgaCTF2015Finals\VolgaCTF2015Finals\VolgaCTF2015Finals.vcxproj" "/solution:F:\Konstantce\Projects\VolgaCTF2015Finals\VolgaCTF2015Finals.sln" "/config:Debug" "/platform:Win32"
+         VisualGDB: Sending 1 updated source file to build machine...
+         VisualGDB: Run "make CONFIG=Debug" in directory "/home/konstantce/VisualGDB" on konstantce@192.168.56.101 (SSH)
+         gcc -ggdb -ffunction-sections -O0   -DDEBUG  -c cmd_parser.c -o Debug/cmd_parser.o -MD -MF Debug/cmd_parser.dep
+         gcc -ggdb -ffunction-sections -O0   -DDEBUG  -c crypto.c -o Debug/crypto.o -MD -MF Debug/crypto.dep
+         crypto.c: In function 'base64_encode':
+     1>F:\Konstantce\Projects\VolgaCTF2015Finals\VolgaCTF2015Finals\crypto.c(20,2): error : 'for' loop initial declarations are only allowed in C99 mode
+           for (unsigned int i = 0, j = 0; i < input_length;)
+           ^
+         F:\Konstantce\Projects\VolgaCTF2015Finals\VolgaCTF2015Finals\crypto.c(20,2): note:  use option -std=c99 or -std=gnu99 to compile your code
+     1>F:\Konstantce\Projects\VolgaCTF2015Finals\VolgaCTF2015Finals\crypto.c(34,11): error : conflicting types for 'i'
+           for (int i = 0; i < mod_table[input_length % 3]; i++)
+                    ^
+         F:\Konstantce\Projects\VolgaCTF2015Finals\VolgaCTF2015Finals\crypto.c(20,20): note:  previous definition of 'i' was here
+           for (unsigned int i = 0, j = 0; i < input_length;)
+                             ^
+     1>F:\Konstantce\Projects\VolgaCTF2015Finals\VolgaCTF2015Finals\crypto.c(34,2): error : 'for' loop initial declarations are only allowed in C99 mode
+           for (int i = 0; i < mod_table[input_length % 3]; i++)
+           ^
+         crypto.c: In function 'base64_init':
+     1>F:\Konstantce\Projects\VolgaCTF2015Finals\VolgaCTF2015Finals\crypto.c(41,2): error : 'for' loop initial declarations are only allowed in C99 mode
+           for (int i = 0; i < 64; i++)
+           ^
+         crypto.c: In function 'base64_decode':
+     1>F:\Konstantce\Projects\VolgaCTF2015Finals\VolgaCTF2015Finals\crypto.c(63,2): error : 'for' loop initial declarations are only allowed in C99 mode
+           for (unsigned int i = 0, j = 0; i < input_length;)
+           ^
+         crypto.c: In function 'check_acct':
+     1>F:\Konstantce\Projects\VolgaCTF2015Finals\VolgaCTF2015Finals\crypto.c(90,2): error : 'for' loop initial declarations are only allowed in C99 mode
+           for (int i = 0; i < SHA512_DIGEST_LENGTH; i++)
+           ^
+         crypto.c: In function 'generate_passphrase':
+     1>F:\Konstantce\Projects\VolgaCTF2015Finals\VolgaCTF2015Finals\crypto.c(138,2): error : 'for' loop initial declarations are only allowed in C99 mode
+           for (int i = 0; i < SHA512_DIGEST_LENGTH; i++)
+           ^
+         make: *** [Debug/crypto.o] Error 1
+         -------------------------------------------------------------
+         Command exited with code 2
+         Executable: make
+         Arguments: CONFIG=Debug
+         Directory: /home/konstantce/VisualGDB
+     1>VisualGDB : error : Command-line action failed
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.MakeFile.Targets(38,5): error MSB3073: The command ""F:\VisualGDB\\VisualGDB.exe" /build "F:\Konstantce\Projects\VolgaCTF2015Finals\VolgaCTF2015Finals\VolgaCTF2015Finals.vcxproj" "/solution:F:\Konstantce\Projects\VolgaCTF2015Finals\VolgaCTF2015Finals.sln" "/config:Debug" "/platform:Win32"" exited with code 1.
+     1>Done Building Project "F:\Konstantce\Projects\VolgaCTF2015Finals\VolgaCTF2015Finals\VolgaCTF2015Finals.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.77
