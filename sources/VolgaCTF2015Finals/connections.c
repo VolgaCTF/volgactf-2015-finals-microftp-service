@@ -344,9 +344,7 @@ bool interract(int conn_fd, cmd_opts *opts)
 	memset(ss.home_dir, 0, MAXPATHLEN);
 	memset((char*)&ss.acct_str, 0, DATABUFSIZE);
 	strcpy(ss.current_dir, opts->chrootdir);
-
-	if (chdir(ss.current_dir))
-		close_conn(conn_fd);
+	
 	if (!(getcwd(ss.current_dir, MAXPATHLEN)))
 		close_conn(conn_fd);
 	strcpy(ss.home_dir, ss.current_dir);
